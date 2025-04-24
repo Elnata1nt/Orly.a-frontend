@@ -45,13 +45,13 @@ export function SignInForm({
         password,
       });
 
-      // // O token já é salvo automaticamente pelo ApiService
-      // showNotification(
-      //   "success",
-      //   "Login realizado com sucesso!",
-      //   "Você será redirecionado para o Dashboard.",
-      //   "bottom-right",
-      // )
+      // O token já é salvo automaticamente pelo ApiService
+      showNotification(
+        "success",
+        "Login realizado com sucesso!",
+        "Você será redirecionado para o Dashboard.",
+        "top-right",
+      )
 
       // Pequeno delay para mostrar a notificação antes de redirecionar
       setTimeout(() => {
@@ -124,7 +124,7 @@ export function SignInForm({
               />
             </div>
             <a
-              href="#"
+              href="/forgot-password"
               className="ml-auto text-sm underline-offset-4 text-indigo-500 hover:underline"
             >
               Esqueceu sua senha?
