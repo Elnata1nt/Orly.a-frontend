@@ -64,25 +64,25 @@ export function Notification({
       <div
         className={cn(
           "p-4 flex items-start gap-3",
-          type === "success" ? "bg-indigo-50 border-l-4 border-indigo-500" : "bg-red-50 border-l-4 border-red-500",
+          type === "success" ? "bg-slate-100 border-l-4 border-lime-500" : "bg-slate-100 border-l-4 border-red-500",
         )}
       >
         <div className="flex-shrink-0">
           {type === "success" ? (
-            <CheckCircle className="h-5 w-5 text-indigo-500" />
+            <CheckCircle className="h-5 w-5 text-lime-500" />
           ) : (
             <AlertCircle className="h-5 w-5 text-red-500" />
           )}
         </div>
         <div className="flex-1">
-          <h3 className={cn("font-medium", type === "success" ? "text-indigo-800" : "text-red-800")}>{title}</h3>
-          <p className={cn("text-sm mt-1", type === "success" ? "text-indigo-700" : "text-red-700")}>{message}</p>
+          <h3 className={cn("font-medium", type === "success" ? "text-lime-800" : "text-red-800")}>{title}</h3>
+          <p className={cn("text-sm mt-1", type === "success" ? "text-lime-700" : "text-red-700")}>{message}</p>
         </div>
         <button
           onClick={onClose}
           className={cn(
             "flex-shrink-0 ml-4 p-1 rounded-full hover:bg-opacity-10",
-            type === "success" ? "hover:bg-indigo-200 text-indigo-500" : "hover:bg-red-200 text-red-500",
+            type === "success" ? "hover:bg-lime-200 text-lime-500" : "hover:bg-red-200 text-red-500",
           )}
         >
           <X className="h-4 w-4" />
