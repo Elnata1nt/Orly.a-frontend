@@ -29,7 +29,7 @@ export function Hero() {
             inteligentes. Tenha o controle total das suas finanças pessoais.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button  className="rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-800 h-12 px-8 text-base">
+            <Button  className="rounded-xl text-white bg-gradient-to-r from-indigo-500 to-indigo-800 h-12 px-8 text-base">
               Iniciar Teste Grátis
               <ArrowRight className="ml-2 size-4" />
             </Button>

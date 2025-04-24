@@ -1,37 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, Menu, X, Sun, Moon } from "lucide-react";
+import { ChevronRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
-import router from "next/router";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { ModeToggle } from "../effects/mode-toggle";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   const router = useRouter();
   const handleStart = () => {
@@ -46,8 +26,8 @@ export function Header() {
     >
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2 font-bold">
-          <div className="size-10 rounded-lg bg-indigo-500 flex items-center justify-center text-primary-foreground">
-            O
+          <div className="size-10 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center text-primary-foreground">
+            <Image src="/Logos/logo-icon-white.png" alt="Logo" width={30} height={30} />
           </div>
           <span>Orly.a</span>
         </div>
@@ -77,39 +57,14 @@ export function Header() {
             FAQ
           </Link>
         </nav>
+    
         <div className="hidden md:flex gap-4 items-center">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-full"
-          >
-            {mounted && theme === "dark" ? (
-              <Sun className="size-[18px]" />
-            ) : (
-              <Moon className="size-[18px]" />
-            )}
-            <span className="sr-only">Toggle theme</span>
-          </Button>
-          
-          <Button onClick={handleStart} className="rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-700">
+          <Button onClick={handleStart} className="rounded-xl text-white bg-gradient-to-r from-indigo-500 to-indigo-700">
           Entrar
           <ChevronRight className="size-4" />
           </Button>
         </div>
         <div className="flex items-center gap-4 md:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="rounded-full"
-          >
-            {mounted && theme === "dark" ? (
-              <Sun className="size-[18px]" />
-            ) : (
-              <Moon className="size-[18px]" />
-            )}
-          </Button>
           <Button
             variant="ghost"
             size="icon"
@@ -162,7 +117,7 @@ export function Header() {
               FAQ
             </Link>
             <div className="flex flex-col gap-2 pt-2 border-t">
-            <Button onClick={handleStart} className="rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-700">
+            <Button onClick={handleStart} className="rounded-xl text-card-foreground bg-gradient-to-r from-indigo-500 to-indigo-700">
               Entrar
               <ChevronRight className="size-4" />
             </Button>
