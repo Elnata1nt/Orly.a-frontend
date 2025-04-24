@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { DatePickerDemo } from "./data-de-nascimento";
 
 export default function SignUpForm() {
   return (
@@ -51,7 +50,11 @@ export default function SignUpForm() {
 
             <div className="flex gap-4">
               <div className="w-1/2">
-                <DatePickerDemo />
+              <Input
+                  className="border placeholder:text-gray-400"
+                  placeholder="Município"
+                  type="date"
+                />
               </div>
               <div className="w-1/2">
                 <Input
