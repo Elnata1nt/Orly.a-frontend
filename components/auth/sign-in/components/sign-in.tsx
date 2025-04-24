@@ -134,9 +134,9 @@ export function SignInForm({
           <Button
             type="submit"
             className="rounded-md bg-gradient-to-r text-white from-indigo-500 to-indigo-700"
-            disabled={isLoading}
+
           >
-            {isLoading ? "Carregando..." : "Entrar"}
+           Entrar
           </Button>
         </div>
         <div className="text-center text-sm">
