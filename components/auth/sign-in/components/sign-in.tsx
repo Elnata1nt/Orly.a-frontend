@@ -6,13 +6,13 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import ApiService from "@/service/apiService";
 import { useRouter } from "next/navigation";
 import {
   Notification,
   NotificationItem,
   useNotification,
 } from "@/components/ui/notification";
+import authService from "@/service/authService";
 
 interface LoginResponse {
   token: string;
@@ -37,7 +37,7 @@ export function SignInForm({
 
     try {
       // Usando o ApiService real com a estrutura correta
-      const response = await ApiService.post<
+      const response = await authService.post<
         { email: string; password: string },
         LoginResponse
       >("/auth/login", {

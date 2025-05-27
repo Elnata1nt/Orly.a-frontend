@@ -25,33 +25,33 @@ export function Features() {
     {
       title: "Acompanhamento de Gastos",
       description: "Registre e monitore seus gastos e ganhos de forma prática e intuitiva, mantendo tudo organizado.",
-      icon: <BarChart className="size-5" />,
+      icon: <BarChart className="size-5 text-indigo-500" />,
     },
     {
       title: "Identificação de Padrões",
       description: "Descubra padrões e saídas de dinheiro que passam despercebidas com análises inteligentes.",
-      icon: <Zap className="size-5" />,
+      icon: <Zap className="size-5 text-indigo-500" />,
     },
     {
       title: "Sugestões de Economia",
       description: "Receba dicas personalizadas para economizar e otimizar seus gastos com base no seu perfil.",
-      icon: <Star className="size-5" />,
+      icon: <Star className="size-5 text-indigo-500" />,
     },
     {
       title: "Visão Geral Organizada",
       description: "Tenha uma visão completa e organizada das suas finanças com dashboards intuitivos.",
-      icon: <Layers className="size-5" />,
+      icon: <Layers className="size-5 text-indigo-500" />,
     },
     {
       title: "Integração com WhatsApp",
       description: "Acesse suas informações financeiras e receba dicas diretamente pelo WhatsApp com nossa IA pessoal.",
-      icon: <Users className="size-5" />,
+      icon: <Users className="size-5 text-indigo-500" />,
     },
     {
       title: "Segurança Avançada",
       description:
         "Seus dados financeiros protegidos com criptografia de ponta a ponta e medidas de segurança robustas.",
-      icon: <Shield className="size-5" />,
+      icon: <Shield className="size-5 text-indigo-500" />,
     },
   ]
 
@@ -68,7 +68,9 @@ export function Features() {
           <Badge className="rounded-full border-indigo-200 px-4 py-1.5 text-sm font-medium" variant="secondary">
             Recursos
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Tudo o que Você Precisa para Ter Sucesso</h2>
+          <h2 className="text-3xl text-indigo-500 md:text-4xl font-bold tracking-tight">
+            Tudo o que Você Precisa para Ter Sucesso
+          </h2>
           <p className="max-w-[800px] text-muted-foreground md:text-lg">
             Nossa plataforma abrangente fornece todas as ferramentas necessárias para otimizar seu fluxo de trabalho,
             aumentar a produtividade e alcançar seus objetivos.
@@ -86,7 +88,7 @@ export function Features() {
             <motion.div key={i} variants={item}>
               <Card className="h-full overflow-hidden border-border/40 bg-gradient-to-b from-background to-muted/10 backdrop-blur transition-all hover:shadow-md">
                 <CardContent className="p-6 flex flex-col h-full">
-                  <div className="size-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary mb-4">
+                  <div className="size-10 rounded-full border flex items-center justify-center text-primary mb-4">
                     {feature.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>

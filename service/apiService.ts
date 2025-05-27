@@ -3,16 +3,15 @@ import { destroyToken } from "./JwtService";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const getToken = (): string | null => {
-    const tokenData = localStorage.getItem('authToken');
-    if (!tokenData) return null;
-    try {
-      const parsed = JSON.parse(tokenData);
-      return parsed.token || null;
-    } catch (e) {
-      return null;
-    }
-  };
-  
+  const tokenData = localStorage.getItem("authToken");
+  if (!tokenData) return null;
+  try {
+    const parsed = JSON.parse(tokenData);
+    return parsed.token || null;
+  } catch (e) {
+    return null;
+  }
+};
 
 const saveToken = (token: string): void => {
   localStorage.setItem("authToken", token);
@@ -29,11 +28,11 @@ class ApiService {
   // Função genérica para fazer requisições GET
   static async get<T>(endpoint: string): Promise<ApiResponse<T>> {
     const token = getToken();
-  
+
     if (!token) {
       throw new Error("Token de autenticação não encontrado");
     }
-  
+
     try {
       const response = await fetch(`${API_URL}${endpoint}`, {
         headers: {
@@ -41,14 +40,14 @@ class ApiService {
         },
       });
       const data = await response.json();
-  
+
       if (!response.ok) {
         if (response.status === 401) {
           throw new Error("Token de autenticação expirado ou inválido");
         }
         throw new Error(data.message || "Erro ao buscar dados");
       }
-  
+
       return {
         message: "",
         success: true,
@@ -61,36 +60,35 @@ class ApiService {
   }
 
   // Função genérica para fazer requisições POST
-  static async post<T, U>(endpoint: string, body: T): Promise<ApiResponse<U>> {
-    const isAuthRoute = endpoint === "/auth/login";
-    const token = isAuthRoute ? null : getToken();
-
-    if (!isAuthRoute && !token) {
-      throw new Error("Token de autenticação não encontrado");
-    }
-
+  static async post<T, U>(
+    endpoint: string,
+    body: T,
+    requiresAuth = false
+  ): Promise<ApiResponse<U>> {
     try {
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+      };
+
+      // Adiciona o token apenas se a autenticação for necessária
+      if (requiresAuth) {
+        const token = getToken();
+        if (!token) {
+          throw new Error("Token de autenticação não encontrado");
+        }
+        headers["Authorization"] = `Bearer ${token}`;
+      }
+
       const response = await fetch(`${API_URL}${endpoint}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          ...(token && { Authorization: `Bearer ${token}` }),
-        },
+        headers,
         body: JSON.stringify(body),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        if (response.status === 401) {
-          destroyToken();
-          throw new Error("Token de autenticação expirado ou inválido");
-        }
         throw new Error(data.message || "Erro ao enviar dados");
-      }
-
-      if (isAuthRoute && data.token && data.user) {
-        saveToken(JSON.stringify({ token: data.token, user: data.user }));
       }
 
       return {

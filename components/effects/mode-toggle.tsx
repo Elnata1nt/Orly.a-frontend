@@ -23,7 +23,7 @@ export function ModeToggle() {
   const isDark = resolvedTheme === "dark";
 
   return (
-    <div className="fixed bottom-4 border border-1 bg-accent rounded-lg right-4 z-50">
+    <div className="fixed bottom-4 border-2 border-indigo-500 bg-accent rounded-lg right-4 z-50">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="icon">

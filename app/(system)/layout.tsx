@@ -1,26 +1,41 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Sidebar from "@/components/system/sidebar/components/sidebar";
+"use client"
 
-const inter = Inter({ subsets: ["latin"] });
+import type React from "react"
+import { Inter } from "next/font/google"
+import Sidebar, { useSidebarState } from "@/components/system/sidebar/components/sidebar"
+import Header from "@/components/system/header/components/header"
 
-export const metadata: Metadata = {
-  title: "orly.a - Plataforma Financeira",
-  description: "Gerencie suas finanças com facilidade",
-};
+
+const inter = Inter({ subsets: ["latin"] })
 
 export default function LayoutSistem({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
+  const { open, toggle } = useSidebarState()
+
   return (
     <div className="flex min-h-screen bg-background">
-      <Sidebar />
-      <main className={`flex-1 p-4 md:ml-64 ${inter.className}`}>
-        {children}
-      </main>
+      {/* Backdrop overlay for mobile */}
+      {open && (
+        <div
+          className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm md:hidden"
+          onClick={toggle}
+          aria-hidden="true"
+        />
+      )}
+
+      <Sidebar open={open} />
+
+      <div className={`flex-1 flex flex-col md:ml-64 ${inter.className}`}>
+        <Header open={open} toggle={toggle} />
+
+        {/* Content container with proper spacing */}
+        <div className="flex-1 flex flex-col py-20 overflow-auto">
+          <main className="flex-1 container md:pt-6">{children}</main>
+        </div>
+      </div>
     </div>
-  );
+  )
 }

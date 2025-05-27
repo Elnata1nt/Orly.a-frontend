@@ -1,4 +1,5 @@
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -7,17 +8,25 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-2 font-bold">
-              <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
-                O
+              <div className="size-10 rounded-lg bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center text-primary-foreground">
+                <Image
+                  src="/Logos/logo-icon-white.png"
+                  alt="Logo"
+                  width={30}
+                  height={30}
+                />
               </div>
               <span>Orly.a</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Simplifique sua vida financeira com nossa plataforma completa. Acompanhe gastos, economize mais e alcance
-              suas metas financeiras.
+              Simplifique sua vida financeira com nossa plataforma completa.
+              Acompanhe gastos, economize mais e alcance suas metas financeiras.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-indigo-500 hover:text-foreground transition-colors"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -34,7 +43,10 @@ export function Footer() {
                 </svg>
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-indigo-500 hover:text-foreground transition-colors"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -51,7 +63,10 @@ export function Footer() {
                 </svg>
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Link
+                href="#"
+                className="text-indigo-500 hover:text-foreground transition-colors"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -92,12 +107,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Integrações
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   API
                 </Link>
               </li>
@@ -107,22 +128,34 @@ export function Footer() {
             <h4 className="text-sm font-bold">Recursos</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Documentação
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Guias
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Suporte
                 </Link>
               </li>
@@ -132,22 +165,34 @@ export function Footer() {
             <h4 className="text-sm font-bold">Empresa</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Sobre
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Carreiras
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Política de Privacidade
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Termos de Serviço
                 </Link>
               </li>
@@ -156,21 +201,31 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-4 sm:flex-row justify-between items-center border-t border-border/40 pt-8">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Orly.a. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Orly.a. Todos os direitos
+            reservados.
           </p>
           <div className="flex gap-4">
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              href="#"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
               Política de Privacidade
             </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              href="#"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
               Termos de Serviço
             </Link>
-            <Link href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              href="#"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
               Política de Cookies
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

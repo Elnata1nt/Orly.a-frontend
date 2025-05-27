@@ -10,11 +10,11 @@ export function LogoSection() {
             {[1, 2, 3, 4, 5].map((i) => (
               <Image
                 key={i}
-                src={`/placeholder-logo.svg`}
+                src={`/Logos/logo-vertical-indigo.png`}
                 alt={`Company logo ${i}`}
                 width={120}
                 height={60}
-                className="h-8 w-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+                className="h-40   w-auto opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0"
               />
             ))}
           </div>

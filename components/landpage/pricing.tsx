@@ -20,7 +20,7 @@ export function Pricing() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
         >
-          <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
+          <Badge className="rounded-full border-indigo-500 px-4 py-1.5 text-sm font-medium" variant="secondary">
             Preços
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Preços Simples e Transparentes</h2>
@@ -46,7 +46,7 @@ export function Pricing() {
                 {[
                   {
                     name: "Pessoal",
-                    price: "R$29",
+                    price: "R$65",
                     description: "Perfeito para indivíduos que querem organizar suas finanças.",
                     features: [
                       "Acompanhamento de gastos e ganhos",
@@ -58,7 +58,7 @@ export function Pricing() {
                   },
                   {
                     name: "Familiar",
-                    price: "R$59",
+                    price: "R$95",
                     description: "Ideal para famílias que desejam controle financeiro conjunto.",
                     features: [
                       "Até 5 usuários",
@@ -72,7 +72,7 @@ export function Pricing() {
                   },
                   {
                     name: "Premium",
-                    price: "R$99",
+                    price: "R$199",
                     description: "Para quem busca o máximo em planejamento financeiro.",
                     features: [
                       "Usuários ilimitados",
@@ -93,10 +93,10 @@ export function Pricing() {
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
                     <Card
-                      className={`relative overflow-hidden h-full ${plan.popular ? "border-primary shadow-lg" : "border-border/40 shadow-md"} bg-gradient-to-b from-background to-muted/10 backdrop-blur`}
+                      className={`relative overflow-hidden h-full ${plan.popular ? "border-indigo-500 shadow-lg" : "border-indigo-300 shadow-md"} bg-gradient-to-b from-background to-blue-500/40 backdrop-blur`}
                     >
                       {plan.popular && (
-                        <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
+                        <div className="absolute top-0 right-0 bg-indigo-500 text-white px-3 py-1 text-xs font-medium rounded-bl-lg">
                           Mais Popular
                         </div>
                       )}
@@ -116,7 +116,7 @@ export function Pricing() {
                           ))}
                         </ul>
                         <Button
-                          className={`w-full mt-auto rounded-full ${plan.popular ? "bg-primary hover:bg-primary/90" : "bg-muted hover:bg-muted/80"}`}
+                          className={`w-full text-primary mt-auto rounded-2xl ${plan.popular ? "bg-indigo-500 text-white hover:bg-indigo-500/90" : "bg-muted hover:bg-muted/80"}`}
                           variant={plan.popular ? "default" : "outline"}
                         >
                           {plan.cta}
@@ -132,7 +132,7 @@ export function Pricing() {
                 {[
                   {
                     name: "Pessoal",
-                    price: "R$24",
+                    price: "R$52",
                     description: "Perfeito para indivíduos que querem organizar suas finanças.",
                     features: [
                       "Acompanhamento de gastos e ganhos",
@@ -144,7 +144,7 @@ export function Pricing() {
                   },
                   {
                     name: "Familiar",
-                    price: "R$49",
+                    price: "R$76",
                     description: "Ideal para famílias que desejam controle financeiro conjunto.",
                     features: [
                       "Até 5 usuários",
@@ -158,7 +158,7 @@ export function Pricing() {
                   },
                   {
                     name: "Premium",
-                    price: "R$79",
+                    price: "R$159",
                     description: "Para quem busca o máximo em planejamento financeiro.",
                     features: [
                       "Usuários ilimitados",
@@ -179,10 +179,10 @@ export function Pricing() {
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
                     <Card
-                      className={`relative overflow-hidden h-full ${plan.popular ? "border-primary shadow-lg" : "border-border/40 shadow-md"} bg-gradient-to-b from-background to-muted/10 backdrop-blur`}
+                      className={`relative overflow-hidden h-full ${plan.popular ? "border-indigo-500 shadow-lg" : "border-border/40 shadow-md"} bg-gradient-to-b from-background to-indigo-500/40 backdrop-blur`}
                     >
                       {plan.popular && (
-                        <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
+                        <div className="absolute top-0 right-0 bg-indigo-500 text-white px-3 py-1 text-xs font-medium rounded-bl-lg">
                           Mais Popular
                         </div>
                       )}
@@ -202,7 +202,7 @@ export function Pricing() {
                           ))}
                         </ul>
                         <Button
-                          className={`w-full mt-auto rounded-full ${plan.popular ? "bg-primary hover:bg-primary/90" : "bg-muted hover:bg-muted/80"}`}
+                          className={`w-full mt-auto rounded-2xl ${plan.popular ? "bg-indigo-500 text-white hover:bg-indigo-500/90" : "bg-muted text-primary hover:bg-muted/80"}`}
                           variant={plan.popular ? "default" : "outline"}
                         >
                           {plan.cta}

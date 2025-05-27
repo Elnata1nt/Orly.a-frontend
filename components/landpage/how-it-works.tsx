@@ -16,7 +16,7 @@ export function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
         >
-          <Badge className="rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
+          <Badge className="rounded-full border-indigo-500 px-4 py-1.5 text-sm font-medium" variant="secondary">
             Como Funciona
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Processo Simples, Resultados Poderosos</h2>
@@ -56,7 +56,7 @@ export function HowItWorks() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative z-10 flex flex-col items-center text-center space-y-4"
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/70 text-primary-foreground text-xl font-bold shadow-lg">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-indigo-700 text-white text-xl font-bold shadow-lg">
                 {step.step}
               </div>
               <h3 className="text-xl font-bold">{step.title}</h3>
